@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			@import "bootstrap-icons/font/bootstrap-icons.css";
+
+			body { margin: 0; }
+
+			.splitPanel {
+				position: fixed;
+				width: 50%;
+				height: 100%;
+			}
+
+			.mapCell {
+				width:24px;
+				height:24px;
+				text-align: center;
+				border: 1px solid #e5e5e5;
+				border-color: rgba(0, 0, 0, .15);
+				border-width: 1px 1px 1px 1px;
+				box-sizing: border-box;
+			}
+
+			.mapTable {
+				table-layout: fixed;
+				width:100%;
+				max-width: max-content;
+				user-select: none;
+			}
+
+			.mapButton {
+				border: 1px solid black;
+			}
+			.mapButton:hover {
+				background-color: rgb(255, 255, 255);
+			}
+			.mapButton.active { 
+				background-color: lightgray;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<script type="module" src="src/main.js"></script>
+		<div class="splitPanel" style="left:0px; box-sizing: border-box; padding: 4px;">
+			<div style="border: 1px solid black; width:100%; height:100%; box-sizing: border-box; padding: 4px; display: flex; flex-direction: column;">
+				<div style="margin-bottom: 4px;">
+					<button disabled><i class="bi bi-plus-square-fill"></i>Create a new map</button>
+					<select style="width:200px" disabled>
+						<option value="">Select an existing map...</option>
+						<option value="">Zone 1</option>
+						<option value="">Zone 2</option>
+					</select>
+					<button id="mapButtonWall" class="mapButton active"><i class="bi bi-bricks"></i>Wall</button>
+					<button id="mapButtonFloor" class="mapButton"><i class="bi bi-grid"></i>Floor 1</button>
+					<button id="mapButtonDoor" class="mapButton"><i class="bi bi-door-closed"></i>Floor 2</button>
+					<button id="mapButtonTree" class="mapButton"><i class="bi bi-tree"></i>Tree</button>
+					<br>
+					Click in the grid to place walls, floors and trees and right click to remove.
+					<!-- <select style="width:200px">
+						<option value="">Wall Style</option>
+						<option value="">Stone 1</option>
+						<option value="">Stone 2</option>
+					</select> -->
+					<!-- <select style="width:200px">
+						<option value="">Floor Style</option>
+						<option value="">Desert 1</option>
+						<option value="">Stone 1</option>
+					</select> -->
+					<!-- <button id="mapButtonWall" class="mapButton"><i class="bi bi-border"></i></button>
+					<button id="mapButtonWall" class="mapButton active"><i class="bi bi-border-outer"></i></button>
+					<button id="mapButtonWall" class="mapButton"><i class="bi bi-border-left"></i></button>
+					<button id="mapButtonWall" class="mapButton"><i class="bi bi-border-top"></i></button>
+					<button id="mapButtonWall" class="mapButton"><i class="bi bi-border-right"></i></button>
+					<button id="mapButtonWall" class="mapButton"><i class="bi bi-border-bottom"></i></button> -->
+				</div>
+				<div style="overflow: scroll; flex: 1 1 100%; border:1px solid lightgray;width:100%; box-sizing: border-box;">
+					<table id="mapTable" class="mapTable" cellspacing="0" cellpadding="0">
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="splitPanel" style="right:0px; box-sizing: border-box; padding: 4px;">
+			<div id="worldView" style="border: 1px solid black; width:100%; height:50%; box-sizing: border-box; padding: 4px;">
+				<div id="canvas" style="width:100%; height: 100%;"></div>
+			</div>
+			<div id="infoPanel" style="border: 1px solid black; width:100%; height:50%; box-sizing: border-box; padding: 4px;">
+				<b>Left click to rotate the camera in the 3D view above and right click to pan.</b>
+				<div id="infoPanelCoords"></div>
+			</div>
+		</div>
+	</body>
+</html>
