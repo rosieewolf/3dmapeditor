@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx vite"
+    "dev": "npx vite",
+    "build": "vite build"
   },
   "author": "",
   "license": "ISC",
