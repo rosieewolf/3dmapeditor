@@ -350,14 +350,14 @@ async function loadModel(url, name) {
 }
 
 async function loadModels() {
-	await loadModel("/3dmapeditor/assets/wall_0.glb", "wall1");
-	await loadModel("/3dmapeditor/assets/floor.glb", "floor1");
-	await loadModel("/3dmapeditor/assets/palm_tree.glb", "palm_tree");
+	await loadModel("assets/wall_0.glb", "wall1");
+	await loadModel("assets/floor.glb", "floor1");
+	await loadModel("assets/palm_tree.glb", "palm_tree");
 }
 
-loadTexture("/3dmapeditor/assets/desert1.png", "desert1");
-loadTexture("/3dmapeditor/assets/wall1.png", "wall1");
-loadTexture("/3dmapeditor/assets/pathtex1.png", "path1");
+loadTexture("assets/desert1.png", "desert1");
+loadTexture("assets/wall1.png", "wall1");
+loadTexture("assets/pathtex1.png", "path1");
 //wall_texture.minFilter = THREE.LinearFilter;
 //wall_texture.magFilter = THREE.LinearFilter;
 
