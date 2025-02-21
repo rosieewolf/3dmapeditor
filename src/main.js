@@ -432,6 +432,7 @@ loadModels().then(() =>{
 	}
 )
 
+
 //item.material = new THREE.MeshBasicMaterial( { color: 0xffffff, side:THREE.DoubleSide, map:ground_texture } );
 
 function setTree(x, y, id) {
